@@ -26,7 +26,7 @@ def generate_tree(pathname, n=0):
 
 if __name__ == '__main__':
     base_path = Path.cwd()
-    generate_tree(base_path)
+    generate_tree(base_path / 'src')
     with open('README.md', "w") as lf:
         lf.write("# База знаний # " + "\n")
         for data in tree_str:
