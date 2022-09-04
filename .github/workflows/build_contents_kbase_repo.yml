@@ -60,7 +60,7 @@ jobs:
         SCRIPT_STDOUT: ${{ steps.script.outputs.stdout }}
         SCRIPT_STDERR: ${{ steps.script.outputs.stderr }} 
     - name: GitHub Build Push
-      uses: x-actions/gh-pages@release/v1
+      uses: x-actions/gh-pages@v1
       env:
         GITHUB_EMAIL: "laspavel@gmail.com"
         GITHUB_USERNAME: "laspavel"
