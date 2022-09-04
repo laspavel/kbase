@@ -64,6 +64,6 @@ jobs:
       env:
         GITHUB_EMAIL: "laspavel@gmail.com"
         GITHUB_USERNAME: "laspavel"
-        PUBLISH_REPO: laspavel/kbase
+        PUBLISH_REPO: https://${{ secrets.BUILDCONTENTSKBASEREPOKEY }}@github.com/laspavel/kbase.git
         PUBLISH_BRANCH: main
   
