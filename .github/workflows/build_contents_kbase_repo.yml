@@ -66,4 +66,5 @@ jobs:
         GITHUB_USERNAME: "laspavel"
         PUBLISH_REPO: https://${{ secrets.BUILDCONTENTSKBASEREPOKEY }}@github.com/laspavel/kbase.git
         PUBLISH_BRANCH: main
+        PUBLISH_DIR: .
   
