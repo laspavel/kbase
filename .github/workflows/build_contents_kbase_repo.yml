@@ -60,11 +60,10 @@ jobs:
         SCRIPT_STDOUT: ${{ steps.script.outputs.stdout }}
         SCRIPT_STDERR: ${{ steps.script.outputs.stderr }} 
     - name: GitHub Build Push
-      uses: x-actions/git-push@v1.0
+      uses: x-actions/gh-pages@release/v1
       env:
         GITHUB_EMAIL: "laspavel@gmail.com"
         GITHUB_USERNAME: "laspavel"
         PUBLISH_REPO: https://${{ secrets.BUILDCONTENTSKBASEREPOKEY }}@github.com/laspavel/kbase.git
         PUBLISH_BRANCH: main
         PUBLISH_DIR: .
-  
