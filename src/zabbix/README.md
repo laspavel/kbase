@@ -1,0 +1,5 @@
+* [zabbix](src/zabbix) 
+    * [snmp_traps](src/zabbix/snmp_traps) 
+        * [SNMP Traps](src/zabbix/snmp_traps/readme.md) 
+    * [(ZABBIX) - Изменение максимального количества записей отображаемых на странице виджета (дашборд)](src/zabbix/1.md) 
+    * [1](src/zabbix/1) 

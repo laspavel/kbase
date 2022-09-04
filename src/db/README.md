@@ -1,0 +1,6 @@
+* [db](src/db) 
+    * [MySQL xtrabackup recovery for Zabbix DB](src/db/3.md) 
+    * [[PostgreSQL] полезности](src/db/2.md) 
+    * [[MYSQL] - Справочник запросов](src/db/1.md) 
+    * [pgbouncer](src/db/pgbouncer) 
+        * [PgBouncer](src/db/pgbouncer/readme.md) 
