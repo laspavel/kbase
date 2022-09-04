@@ -60,10 +60,18 @@ jobs:
         SCRIPT_STDOUT: ${{ steps.script.outputs.stdout }}
         SCRIPT_STDERR: ${{ steps.script.outputs.stderr }} 
     - name: GitHub Build Push
-      uses: x-actions/gh-pages@v1
-      env:
-        GITHUB_EMAIL: "laspavel@gmail.com"
-        GITHUB_USERNAME: "laspavel"
-        PUBLISH_REPO: https://${{ secrets.BUILDCONTENTSKBASEREPOKEY }}@github.com/laspavel/kbase.git
-        PUBLISH_BRANCH: main
-        PUBLISH_DIR: .
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Automated Deploy Change
+        branch: main
+        commit_options: '--no-verify --signoff'
+        commit_user_name: laspavel
+        commit_user_email: laspavel@gmain.com
+        commit_author: laspavel <laspavel@gmail.com> 
+        add_options: '-u'
+        push_options: '--force'
+        skip_dirty_check: true    
+        skip_fetch: true
+        skip_checkout: true
+        disable_globbing: true
+        create_branch: true
