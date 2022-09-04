@@ -61,9 +61,9 @@ jobs:
         SCRIPT_STDERR: ${{ steps.script.outputs.stderr }} 
     - name: GitHub Build Push
       uses: x-actions/git-push@v1.0
-      with:
-        GITHUB_EMAIL: laspavel@gmail.com
-        GITHUB_USERNAME: laspavel
+      env:
+        GITHUB_EMAIL: "laspavel@gmail.com"
+        GITHUB_USERNAME: "laspavel"
         PUBLISH_REPO: laspavel/kbase
         PUBLISH_BRANCH: main
   
