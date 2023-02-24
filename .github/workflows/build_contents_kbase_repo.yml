@@ -44,8 +44,12 @@ jobs:
                       with open(data['path']+'/README.md', "w") as outf:
                           for ds in tree_str:
                               if ds['path'].find(data['path']) > -1:
-                                  outf.write(
+                                  if ds['path']==data['path']:
+                                    outf.write(
                                       " " * 4 * (ds['level']-data['level']) + '* '"[" + ds['name'] + "](" + ds['path'].replace(data['path'],'') + ") "  "\n")
+                                  else:
+                                    outf.write(
+                                      " " * 4 * (ds['level']-data['level']) + '* '"[" + ds['name'] + "](" + ds['path'] + ") "  "\n")
               with open('README.md', "w") as lf:
                   lf.write("# База знаний # " + "\n")
                   for ds in tree_str:
