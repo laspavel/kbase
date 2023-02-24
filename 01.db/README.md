@@ -1,0 +1,8 @@
+* [01.db]() 
+    * [mysql - Справочник запросов](/10001.mysql.md) 
+    * [postgresql - Справочник запросов](/10002.postgres.md) 
+    * [pgBouncer - установка и настройка](/10050.pgbouncer.md) 
+    * [dod](/dod) 
+        * [Установка и настройка PostgreSQL на CentOS 7.x](/dod/10003.postgres_setup.md) 
+        * [Настройка потоковой репликации в PostgreSQL 11](/dod/10003.postgres_setup.md) 
+        * [Переход с основного сервера (Master) на резервный (Slave)](/dod/10003.postgres_setup.md) 

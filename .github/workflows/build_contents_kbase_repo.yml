@@ -45,7 +45,7 @@ jobs:
                           for ds in tree_str:
                               if ds['path'].find(data['path']) > -1:
                                   outf.write(
-                                      " " * 4 * (ds['level']-data['level']) + '* '"[" + ds['name'] + "](" + ds['path'] + ") "  "\n")
+                                      " " * 4 * (ds['level']-data['level']) + '* '"[" + ds['name'] + "](" + ds['path'].replace(data['path'],'') + ") "  "\n")
               with open('README.md', "w") as lf:
                   lf.write("# База знаний # " + "\n")
                   for ds in tree_str:
