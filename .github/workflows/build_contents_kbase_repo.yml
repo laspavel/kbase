@@ -30,7 +30,7 @@ jobs:
                               i = i.replace('# ', '').rstrip()
                               tree_str.append({'type': 'file', 'level': n, 'name': i, 'path': str(
                                   pathname.resolve()).replace(str(base_path.as_posix())+'/', '')})
-              elif pathname.is_dir() and pathname.name != ".git":
+              elif pathname.is_dir() and pathname.name != ".git" and pathname.name != ".github":
                   tree_str.append({'type': 'dir', 'level': n, 'name': str(
                       pathname.relative_to(pathname.parent)), 'path': str(pathname.resolve()).replace(str(base_path.as_posix())+'/', '')})
                   open(str(pathname.resolve())+'/README.md', "w+")
@@ -38,7 +38,7 @@ jobs:
                       generate_tree(cp, n + 1)
           if __name__ == '__main__':
               base_path = Path.cwd()
-              generate_tree(base_path / 'src')
+              generate_tree(base_path)    
               for data in tree_str:
                   if data['type'] == 'dir':
                       with open(data['path']+'/README.md', "w") as outf:
@@ -48,9 +48,8 @@ jobs:
                                       " " * 4 * (ds['level']-data['level']) + '* '"[" + ds['name'] + "](" + ds['path'] + ") "  "\n")
               with open('README.md', "w") as lf:
                   lf.write("# База знаний # " + "\n")
-                  with open('src/README.md', "r") as lb:
-                      for lineb in lb:
-                          lf.write(lineb)
+                  for ds in tree_str:
+                      lf.write(" " * 4 * (ds['level']) + '* '"[" + ds['name'] + "](" + ds['path'] + ") "  "\n")
     - name: Print errors
       if: steps.script.outputs.error == 'true'
       run: |
