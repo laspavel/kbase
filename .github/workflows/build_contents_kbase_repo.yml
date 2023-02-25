@@ -49,7 +49,7 @@ jobs:
               with open('README.md', "w") as lf:
                   lf.write("# База знаний # " + "\n")
                   for ds in tree_str:
-                      lf.write(" " * 4 * (ds['level']) + '* '"[" + ds['name'] + "](" + ds['path'] + ") "  "\n")
+                      lf.write(" " * 4 * (ds['level']) + '* '"[" + ds['name'] + "](/" + ds['path'] + ") "  "\n")
     - name: Print errors
       if: steps.script.outputs.error == 'true'
       run: |
