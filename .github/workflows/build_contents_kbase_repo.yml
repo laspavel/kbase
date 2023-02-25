@@ -34,7 +34,7 @@ jobs:
                   tree_str.append({'type': 'dir', 'level': n, 'name': str(
                       pathname.relative_to(pathname.parent)), 'path': str(pathname.resolve()).replace(str(base_path.as_posix())+'/', '')})
                   open(str(pathname.resolve())+'/README.md', "w+")
-                  for cp in sorted(pathname.iterdir()):
+                  for cp in sorted(pathname.iterdir(), key=os.path.basename):
                     generate_tree(cp, n + 1)
           if __name__ == '__main__':
               base_path = Path.cwd()
